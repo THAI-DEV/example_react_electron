@@ -18,7 +18,7 @@ export function incrementDisLike(counter) {
   };
 }
 
-export function resetCounter() {
+export function resetValue() {
   return {
     type: FbCounterActionType.Reset
   };

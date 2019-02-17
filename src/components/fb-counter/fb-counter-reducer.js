@@ -28,11 +28,7 @@ export default function fbCounterReducerFn(state = initData, action) {
       return newState;
 
     case FbCounterActionType.Reset:
-      newState = state.map(item => {
-        item.value = 0;
-        return item;
-      });
-
+      newState = { ...initData };
       return newState;
 
     default:
