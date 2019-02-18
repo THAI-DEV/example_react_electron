@@ -4,17 +4,17 @@ export const FbCounterActionType = {
   Reset: '[FbCounter] Reset'
 };
 
-export function incrementLike(counter) {
+export function incrementLike(data) {
   return {
-    type: FbCounterActionType.IncrementLike,
-    payload: { counter: counter }
+    type: FbCounterActionType.IncrementLike
+    // payload: { data: data }
   };
 }
 
-export function incrementDisLike(counter) {
+export function incrementDisLike() {
   return {
-    type: FbCounterActionType.IncrementDisLike,
-    payload: { counter: counter }
+    type: FbCounterActionType.IncrementDisLike
+    // payload: { data: data }
   };
 }
 

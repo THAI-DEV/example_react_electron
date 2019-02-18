@@ -4,13 +4,15 @@ import { incrementLike, incrementDisLike, resetValue } from './fb-counter-action
 
 class FbCounter extends Component {
   // state = { likeValue: 0, disLikeValue: 0 };
-  handleLike = () => {
-    // this.setState({ likeValue: this.state.likeValue + 1 });
-    // this.handleIncrementLike(this.state.likeValue);
-  };
-  handleDisLike = () => {
-    // this.setState({ disLikeValue: this.state.disLikeValue + 1 });
-    // this.handleIncrementDisLike(this.state.disLikeValue);
+
+  //handleLike = () => {
+  // this.setState({ likeValue: this.state.likeValue + 1 });
+  // this.handleIncrementLike(this.state.likeValue);
+  //};
+
+  myStyle = {
+    small: { width: '70px' },
+    big: { width: '200px' }
   };
 
   render() {
@@ -19,23 +21,15 @@ class FbCounter extends Component {
       <div>
         <div>
           <span />
-          <button className="btn btn-info" style={{ width: '200px' }} onClick={handleReset}>
+          <button className="btn btn-info" style={this.myStyle.big} onClick={handleReset}>
             Reset
           </button>
         </div>
         {stateData.likeValue}
-        <button
-          className="btn btn-success btn-sm m-2"
-          style={{ width: '70px' }}
-          onClick={() => handleIncrementLike(stateData)}
-        >
+        <button className="btn btn-success btn-sm m-2" style={this.myStyle.small} onClick={handleIncrementLike}>
           Like
         </button>
-        <button
-          className="btn btn-danger btn-sm m-2"
-          style={{ width: '70px' }}
-          onClick={() => handleIncrementDisLike(stateData)}
-        >
+        <button className="btn btn-danger btn-sm m-2" style={this.myStyle.small} onClick={handleIncrementDisLike}>
           DisLike
         </button>
         {stateData.disLikeValue}
@@ -54,11 +48,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleIncrementLike: data => {
-      dispatch(incrementLike(data));
+    handleIncrementLike: () => {
+      dispatch(incrementLike());
     },
-    handleIncrementDisLike: data => {
-      dispatch(incrementDisLike(data));
+    handleIncrementDisLike: () => {
+      dispatch(incrementDisLike());
     },
 
     handleReset: () => {
