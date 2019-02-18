@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import reducerStore from '../reduxs/reducers';
+import reducerStore from '../reducer-store';
+import Header from './header';
 import Rounter from './router';
 
 const appStore = createStore(
@@ -17,7 +18,7 @@ class Main extends Component {
     return (
       <div className="container">
         <Provider store={appStore}>
-          <div>Header</div>
+          <Header />
           <Rounter />
         </Provider>
       </div>
