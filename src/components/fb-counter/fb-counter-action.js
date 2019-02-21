@@ -4,7 +4,7 @@ export const FbCounterActionType = {
   Reset: '[FbCounter] Reset'
 };
 
-export function incrementLike(data) {
+export function incrementLike() {
   return {
     type: FbCounterActionType.IncrementLike
     // payload: { data: data }

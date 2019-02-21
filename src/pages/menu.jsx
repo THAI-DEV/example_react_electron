@@ -45,6 +45,9 @@ class Menu extends Component {
                 <Link className="dropdown-item" href="#" to="/ex003">
                   Ex003
                 </Link>
+                <Link className="dropdown-item" href="#" to="/ex004">
+                  Ex004
+                </Link>
               </div>
             </li>
           </ul>
